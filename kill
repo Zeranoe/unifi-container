@@ -1,0 +1,3 @@
+#!/bin/bash
+
+podman pod kill unifi-pod || exit 1
