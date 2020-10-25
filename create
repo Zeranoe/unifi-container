@@ -5,7 +5,7 @@ if [[ $(uname -m) = aarch64 ]]; then
     openjdk=arm64v8/openjdk
 fi
 
-mkdir data logs db db/diagnostic.data db/journal || exit 1
+mkdir data logs db || exit 1
 cp system.properties data || exit 1
 
 podman pod create \
