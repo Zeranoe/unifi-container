@@ -21,15 +21,15 @@ podman pod create \
 podman create \
     --name unifi-db \
     --pod unifi-pod \
-    -v ./db:/data/db:Z \
+    -v ./db:/data/db:z \
     mongo:3 \
     || exit 1
 
 podman create \
     --name unifi \
     --pod unifi-pod \
-    -v ./logs:/unifi/logs:Z \
-    -v ./data:/unifi/data:Z \
+    -v ./logs:/unifi/logs:z \
+    -v ./data:/unifi/data:z \
     -v ./unifi:/unifi \
     -w /unifi \
     $openjdk:8 \
