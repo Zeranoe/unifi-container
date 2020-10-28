@@ -8,7 +8,7 @@ fi
 mkdir data logs db || exit 1
 cp system.properties data || exit 1
 
-podman pod create \
+podman --runtime crun pod create \
     -n unifi-pod \
     --publish 1900/udp \
     --publish 3478/udp \
@@ -18,14 +18,16 @@ podman pod create \
     --publish 10001/udp \
     || exit 1
 
-podman create \
+podman --runtime crun create \
     --name unifi-db \
     --pod unifi-pod \
+    --uidmap 0:1:999 \
+    --uidmap 999:0:1 \
     -v ./db:/data/db:z \
     mongo:3 \
     || exit 1
 
-podman create \
+podman --runtime crun create \
     --name unifi \
     --pod unifi-pod \
     -v ./logs:/unifi/logs:z \
