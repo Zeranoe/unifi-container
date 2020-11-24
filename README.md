@@ -25,6 +25,10 @@ Then to only start the existing Controller:
 
 `bash start`
 
+## Update
+
+`git pull && ./download`
+
 ## Scripts
 
 ### download
