@@ -45,6 +45,6 @@ this point, till the `start` script is executed.
 
 Start the pod, thus bringing up the Java and MonogoDB containers.
 
-### kill
+### stop
 
 Sends a signal to the pod, gracefully closing each container within.
