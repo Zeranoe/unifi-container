@@ -10,12 +10,12 @@ cp system.properties data || exit 1
 
 podman --runtime crun pod create \
     -n unifi-pod \
-    --publish 1900/udp \
-    --publish 3478/udp \
-    --publish 5656-5699/udp \
-    --publish 8080 \
-    --publish 8443 \
-    --publish 10001/udp \
+    --publish 1900:1900/udp \
+    --publish 3478:3478/udp \
+    --publish 5656-5699:5656-5699/udp \
+    --publish 8080:8080 \
+    --publish 8443:8443 \
+    --publish 10001:10001/udp \
     || exit 1
 
 podman --runtime crun create \
