@@ -4,7 +4,7 @@ rm -fr tmp unifi || exit 1
 mkdir tmp || exit 1
 cd tmp || exit 1
 
-curl -LO https://dl.ui.com/unifi/6.0.41/unifi_sysvinit_all.deb || exit 1
+curl -LO https://dl.ui.com/unifi/6.0.43/unifi_sysvinit_all.deb || exit 1
 ar x unifi_sysvinit_all.deb || exit 1
 tar -xf data.tar.xz || exit 1
 
